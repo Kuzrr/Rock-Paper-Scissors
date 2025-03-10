@@ -16,8 +16,6 @@ function getComputerChoice(){
     }
 }
 
-console.log(getComputerChoice());
-
 function getPlayerChoice(){
     let text = `
     Chose a number:
@@ -37,4 +35,36 @@ function getPlayerChoice(){
     }
 }
 
-console.log(getPlayerChoice());
+
+
+function playRound(){
+    let playerChoice = getPlayerChoice();
+    console.log("player: " + playerChoice)
+    let computerChoice = getComputerChoice();
+    console.log("computer: " + computerChoice)
+
+    if(playerChoice === computerChoice){
+        console.log("Draw! Nobody won")
+    }else if(
+    (playerChoice == "scissors" && computerChoice == "paper")||
+    (playerChoice == "rock" && computerChoice == "scissors")||
+    (playerChoice == "paper" && computerChoice == "rock")){
+
+        console.log(`You win! ${playerChoice} beats ${computerChoice}`);
+        humanScore++;
+    }else{
+        console.log(`You Lose! ${computerChoice} beats ${playerChoice}`);
+        computerScore++;
+    }
+    return 0;
+}
+
+for(let i = 0; i <= 4; i++){
+    playRound();
+}
+
+console.log(`Your score: ${humanScore}`);
+console.log(`Computer score: ${computerScore}`);
+
+
+playRound();
