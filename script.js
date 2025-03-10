@@ -1,5 +1,3 @@
-console.log("Hello player!")
-
 let humanScore = 0;
 let computerScore = 0;
 
@@ -53,7 +51,7 @@ function playRound(){
         console.log(`You win! ${playerChoice} beats ${computerChoice}`);
         humanScore++;
     }else{
-        console.log(`You Lose! ${computerChoice} beats ${playerChoice}`);
+        console.log(`You lose! ${computerChoice} beats ${playerChoice}`);
         computerScore++;
     }
     return 0;
@@ -66,5 +64,3 @@ for(let i = 0; i <= 4; i++){
 console.log(`Your score: ${humanScore}`);
 console.log(`Computer score: ${computerScore}`);
 
-
-playRound();
