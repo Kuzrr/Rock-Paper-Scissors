@@ -14,15 +14,7 @@ function getComputerChoice(){
     }
 }
 
-function getPlayerChoice(){
-    let text = `
-    Chose a number:
-    1. Rock
-    2. Paper
-    3. Scissors
-    `;
-    let choice = parseInt(prompt(text));
-
+function getPlayerChoice(choice){
     switch(choice){
         case 1:
             return "rock";
@@ -33,34 +25,47 @@ function getPlayerChoice(){
     }
 }
 
+function playRound(weapon){
+    const playerChoiceText = document.querySelector("#playerChoice");
+    const computerChoiceText = document.querySelector("#computerChoice");
+    const winner = document.querySelector("#resoults");    
 
+    let playerChoice = weapon;
+    playerChoiceText.textContent = weapon;
 
-function playRound(){
-    let playerChoice = getPlayerChoice();
-    console.log("player: " + playerChoice)
     let computerChoice = getComputerChoice();
-    console.log("computer: " + computerChoice)
+    computerChoiceText.textContent = computerChoice;
 
     if(playerChoice === computerChoice){
-        console.log("Draw! Nobody won")
+        winner.textContent = "Draw! Nobody gets a point";
     }else if(
     (playerChoice == "scissors" && computerChoice == "paper")||
     (playerChoice == "rock" && computerChoice == "scissors")||
     (playerChoice == "paper" && computerChoice == "rock")){
 
-        console.log(`You win! ${playerChoice} beats ${computerChoice}`);
+        winner.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
         humanScore++;
     }else{
-        console.log(`You lose! ${computerChoice} beats ${playerChoice}`);
+        winner.textContent = `You lose! ${computerChoice} beats ${playerChoice}`;
         computerScore++;
     }
+
+    
     return 0;
 }
 
-for(let i = 0; i <= 4; i++){
-    playRound();
-}
+const btnRck = document.querySelector("#rock");
+const btnPpr = document.querySelector("#paper");
+const btnScrs = document.querySelector("#scissors");
 
-console.log(`Your score: ${humanScore}`);
-console.log(`Computer score: ${computerScore}`);
+btnRck.addEventListener("click", () => playRound("rock") );
+btnPpr.addEventListener("click", () => playRound("paper") );
+btnScrs.addEventListener("click", () => playRound("scissors") );
+
+
+
+
+
+
+
 
