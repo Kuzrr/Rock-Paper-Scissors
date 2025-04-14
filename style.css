@@ -1,0 +1,53 @@
+body{
+
+    display: flex;
+    justify-content: center;
+    font-family: 'Press Start 2P', sans-serif;
+}
+
+.content{
+    margin-top: 50px;
+    width: 100%;
+    max-width: 800px;
+    padding: 20px;
+    background-color: #f4f4f4;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+h1{
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+}
+
+h3{
+    text-align: center;
+    font-size: 1.5em;
+    color: #999;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+}
+
+.score{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.game{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px 0;
+}
+
+.resoults{
+    display: flex;
+    flex-direction: column;
+}
+
+#resoults{
+    align-self: center;
+}

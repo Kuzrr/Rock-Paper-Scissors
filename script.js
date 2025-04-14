@@ -37,23 +37,29 @@ function playRound(weapon){
     (playerChoice == "rock" && computerChoice == "scissors")||
     (playerChoice == "paper" && computerChoice == "rock")){
 
-        winner.textContent = `You win! ${playerChoice} beats ${computerChoice}.`;
-        playerScore.textContent++;
+        winner.textContent = `You win the round!`;
+        ++playerScore.textContent;
     }else{
-        winner.textContent = `You lose! ${computerChoice} beats ${playerChoice}`;
-        computerScore.textContent++;
+        winner.textContent = `You lose the round!`;
+        ++computerScore.textContent;
     }
     
     if (computerScore.textContent == 5) {
+
+        playerScore.textContent = 0;
+        playerChoiceText.textContent = "";
+        computerChoiceText.textContent = "";
+        computerScore.textContent = 0;
+        winner.textContent = "";
         alert("You lost!");
-        playerScore.textContent = 0;
-        computerScore.textContent = 0;
-        winner.textContent = "";
     } else if(playerScore.textContent == 5){
-        alert("You won!");
+
         playerScore.textContent = 0;
-        computerScore.textContent = 0;
+        computerScoreText.textContent = 0;
+        playerChoiceText.textContent = "";
+        computerChoice.textContent = "";
         winner.textContent = "";
+        alert("You won!");
     }
     
     return 0;
